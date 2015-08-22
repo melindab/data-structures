@@ -82,4 +82,7 @@ HashTable.prototype.rehash = function(newLimit) {
     remove: again, constant if storage resizes, and linear if it doesn't, because
       we must iterate through the bucket to find the item, and then iterate through
       the rest of the bucket to move the indices down one (with our splice operation)
+    rehash: Linear, because we must iterate over every item to extract all key-value
+      pairs, and then iterate over every key-value pair to insert it back into the
+      new storage array. This is why rehashing is an expensive operation.
  */
